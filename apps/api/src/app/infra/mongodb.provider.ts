@@ -12,7 +12,7 @@ export const mongoDBProvider: FactoryProvider = {
     const client = new MongoClient(dbUrl);
     await client.connect();
     Logger.log(`Connected to database at: ${dbUrl}`, 'Database');
-    return await client.db(dbName);
+    return client.db(dbName);
   },
   inject: [ConfigService],
 };
