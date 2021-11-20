@@ -3,6 +3,7 @@
   "projects": {
     "api": "apps/api",
     "core": "libs/core",
-    "frontend": "apps/frontend"
+    "frontend": "apps/frontend",
+    "ui": "libs/ui"
   }
 }

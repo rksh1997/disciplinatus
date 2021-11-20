@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@disciplinatus/core": ["libs/core/src/index.ts"]
+      "@disciplinatus/core": ["libs/core/src/index.ts"],
+      "@disciplinatus/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

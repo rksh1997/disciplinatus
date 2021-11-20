@@ -9,8 +9,12 @@
   },
   "private": true,
   "dependencies": {
+    "@emotion/css": "^11.5.0",
     "@emotion/react": "11.5.0",
     "@emotion/styled": "11.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "@nestjs/common": "^7.0.0",
     "@nestjs/config": "^1.1.0",
     "@nestjs/core": "^7.0.0",
