@@ -9,12 +9,12 @@ export interface TodoProps {
   todo: ITodoSchema;
 }
 
-const wrapperClassName = css`
-  padding: 0.5rem;
-`;
-
 const buttonClassName = css`
   margin: 0 0.25rem;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 `;
 
 export const Todo: React.FC<TodoProps> = ({ todo }) => {
@@ -24,11 +24,7 @@ export const Todo: React.FC<TodoProps> = ({ todo }) => {
   const isLoading = isCompletingTodo || isDeletingTodo;
 
   return (
-    <Flex
-      className={wrapperClassName}
-      justifyContent="space-between"
-      alignItems="center"
-    >
+    <Flex justifyContent="space-between" alignItems="center">
       <div>
         <Typography
           as="h3"

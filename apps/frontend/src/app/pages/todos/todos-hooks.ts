@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 
-import { ITodoSchema } from '@disciplinatus/core';
+import { ICreateTodoDTO, ITodoSchema } from '@disciplinatus/core';
 
 import { TodoService } from '../../services/todo-service';
 import { APIResponse } from '../../lib/common-types';
@@ -29,6 +29,18 @@ export function useDeleteTodo() {
   const queryClient = useQueryClient();
   return useMutation<unknown, unknown, { id: string }>(
     (data) => TodoService.deleteTodo(data.id),
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries([GET_TODOS_API_KEY]);
+      },
+    }
+  );
+}
+
+export function useCreateTodo() {
+  const queryClient = useQueryClient();
+  return useMutation<unknown, unknown, ICreateTodoDTO>(
+    (data) => TodoService.createTodo(data),
     {
       onSuccess: () => {
         queryClient.invalidateQueries([GET_TODOS_API_KEY]);

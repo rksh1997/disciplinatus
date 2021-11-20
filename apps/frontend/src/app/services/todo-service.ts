@@ -1,10 +1,17 @@
 import axios from 'axios';
 
+import { ICreateTodoDTO } from '@disciplinatus/core';
+
 import { API_URL } from '../constants';
 
 export class TodoService {
   static async getTodos() {
     const { data } = await axios.get(`${API_URL}/todos`);
+    return data;
+  }
+
+  static async createTodo(dto: ICreateTodoDTO) {
+    const { data } = await axios.post(`${API_URL}/todos`, dto);
     return data;
   }
 
