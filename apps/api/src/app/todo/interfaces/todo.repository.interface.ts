@@ -1,6 +1,8 @@
-import { ICreateTodoDTO, IUpdateTodoDTO } from '@disciplinatus/core';
-
-import { ITodoSchema } from './todo.schema';
+import {
+  ICreateTodoDTO,
+  ITodoSchema,
+  IUpdateTodoDTO,
+} from '@disciplinatus/core';
 
 export interface ITodoRepository {
   createTodo(data: ICreateTodoDTO): Promise<ITodoSchema>;

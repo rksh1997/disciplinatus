@@ -1,10 +1,13 @@
 import { Collection, Db, ObjectId } from 'mongodb';
 import { FactoryProvider } from '@nestjs/common';
 
-import { ICreateTodoDTO, IUpdateTodoDTO } from '@disciplinatus/core';
+import {
+  ICreateTodoDTO,
+  IUpdateTodoDTO,
+  ITodoSchema,
+} from '@disciplinatus/core';
 
 import { DI_KEYS } from '../di';
-import { ITodoSchema } from './interfaces/todo.schema';
 import { ITodoRepository } from './interfaces/todo.repository.interface';
 
 export class MongoTodoRepository implements ITodoRepository {
